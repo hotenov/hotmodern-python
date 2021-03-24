@@ -10,6 +10,7 @@ keywords = ["hypermodern"]
 
 [tool.poetry.dependencies]
 python = "^3.9.2"
+click = "^7.1.2"
 
 [tool.poetry.dev-dependencies]
 
