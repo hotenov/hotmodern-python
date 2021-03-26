@@ -1,6 +1,7 @@
 import nox
 
 
+nox.options.sessions = "lint", "tests"
 locations = "src", "tests", "noxfile.py"
 
 
@@ -16,3 +17,10 @@ def lint(session):
     args = session.posargs or locations
     session.install("flake8")
     session.run("flake8", *args)
+
+
+@nox.session(python=["3.9.2"], reuse_venv=True)
+def black(session):
+    args = session.posargs or locations
+    session.install("black")
+    session.run("black", *args)
