@@ -3,6 +3,7 @@ import nox
 
 locations = "src", "tests", "noxfile.py"
 
+
 @nox.session(python=["3.9.2"], reuse_venv=True)
 def tests(session):
     args = session.posargs or ["--cov", "-m", "not e2e"]
