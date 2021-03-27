@@ -1,7 +1,10 @@
+import pathlib
+import tempfile
+
 import nox
 
 
-nox.options.sessions = "lint", "tests"
+nox.options.sessions = "lint", "safety", "tests"
 locations = "src", "tests", "noxfile.py"
 
 
@@ -30,3 +33,22 @@ def black(session):
     args = session.posargs or locations
     session.install("black")
     session.run("black", *args)
+
+
+@nox.session(python=["3.9.2"], reuse_venv=True)
+def safety(session):
+    # For running on Windows host we have to ramain tmp file passing delete=False
+    # and then delete it using .unlink()
+    with tempfile.NamedTemporaryFile(delete=False) as requirements:
+        session.run(
+            "poetry",
+            "export",
+            "--dev",
+            "--format=requirements.txt",
+            "--without-hashes",
+            f"--output={requirements.name}",
+            external=True,
+        )
+        session.install("safety")
+        session.run("safety", "check", f"--file={requirements.name}", "--full-report")
+    pathlib.Path(requirements.name).unlink()
