@@ -15,6 +15,7 @@ def install_with_constraints(session, *args, **kwargs):
             "export",
             "--dev",
             "--format=requirements.txt",
+            "--without-hashes",
             f"--output={requirements.name}",
             external=True,
         )
@@ -25,7 +26,14 @@ def install_with_constraints(session, *args, **kwargs):
 @nox.session(python=["3.9.2"], reuse_venv=True)
 def tests(session):
     args = session.posargs or ["--cov", "-m", "not e2e"]
-    session.run("poetry", "install", external=True)
+    session.run("poetry", "install", "--no-dev", external=True)
+    install_with_constraints(
+        session,
+        "coverage[toml]",
+        "pytest",
+        "pytest-cov",
+        "pytest-mock",
+    )
     session.run("pytest", *args)
 
 
