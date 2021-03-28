@@ -12,6 +12,8 @@ keywords = ["hypermodern"]
 python = "^3.9.2"
 click = "^7.1.2"
 requests = "^2.25.1"
+desert = "^2020.11.18"
+marshmallow = "^3.10.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.2"
