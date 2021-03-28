@@ -25,6 +25,6 @@ def main(language):
     else:
         title = data["title"]
         extract = data["extract"]
-        
+
         click.secho(title, fg="green")
         click.echo(textwrap.fill(extract))
