@@ -16,15 +16,12 @@ from . import __version__, wikipedia
     show_default=True,
 )
 @click.version_option(version=__version__)
-def main(language):
+def main(language: str) -> None:
     """The hotmodern Python project."""
     try:
-        data = wikipedia.random_page(language=language)
+        page = wikipedia.random_page(language=language)
     except requests.exceptions.HTTPError:
         print("API endpoint is unavailable, check API URL or try later")
     else:
-        title = data["title"]
-        extract = data["extract"]
-
-        click.secho(title, fg="green")
-        click.echo(textwrap.fill(extract))
+        click.secho(page.title, fg="green")
+        click.echo(textwrap.fill(page.extract))
