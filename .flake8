@@ -1,5 +1,5 @@
 [flake8]
-select = ANN,B,B9,BLK,C,E,F,I,S,W
+select = ANN,B,B9,BLK,C,D,DAR,E,F,I,S,W
 ignore = E203,W503
 max-line-length = 120
 max-complexity = 10
@@ -8,3 +8,5 @@ import-order-style = google
 
 # Disable 'bandit' warings for test suite
 per-file-ignores = tests/*:S101
+
+docstring-convention = google
