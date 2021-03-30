@@ -10,7 +10,7 @@ keywords = ["hypermodern"]
 documentation = "https://hotmodern-python.readthedocs.io"
 
 [tool.poetry.dependencies]
-python = "^3.9.2"
+python = "^3.8"
 click = "^7.1.2"
 requests = "^2.25.1"
 desert = "^2020.11.18"
