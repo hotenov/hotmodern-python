@@ -10,7 +10,7 @@ My Python learning project by article series '[Hypermodern Python](https://cjolo
 This repo 98% repeats code from these articles
 with little improvements for Windows environment
 and except several components
-(pre-commit, typeguard)
+(pre-commit, pytype, typeguard, Release Drafter)
 
 ## Notes for Windows host
 
