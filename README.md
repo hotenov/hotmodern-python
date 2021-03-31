@@ -1,7 +1,7 @@
+[![PyPI](https://img.shields.io/pypi/v/hotmodern-python.svg)](https://pypi.org/project/hotmodern-python/)
 [![Tests](https://github.com/hotenov/hotmodern-python/actions/workflows/tests.yml/badge.svg)](https://github.com/hotenov/hotmodern-python/actions/workflows/tests.yml)
 [![codecov.io](https://codecov.io/github/hotenov/hotmodern-python/coverage.svg?branch=main)](https://codecov.io/github/hotenov/hotmodern-python/coverage.svg?branch=main)
 [![Docs](https://readthedocs.org/projects/hotmodern-python/badge/?version=latest)](https://hotmodern-python.readthedocs.io/en/latest/?badge=latest)
-
 
 # hotmodern-python
 
