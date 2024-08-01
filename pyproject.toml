@@ -10,32 +10,43 @@ keywords = ["hypermodern"]
 documentation = "https://hotmodern-python.readthedocs.io"
 
 [tool.poetry.dependencies]
-python = "^3.8"
-click = "^7.1.2"
-requests = "^2.25.1"
+python = "^3.11"
+click = "^8.1.7"
+requests = "^2.32.3"
 desert = "^2020.11.18"
 marshmallow = "^3.10.0"
 
-[tool.poetry.dev-dependencies]
-pytest = "^6.2.2"
+[tool.poetry.group.dev.dependencies]
+
+
+[tool.poetry.group.docs.dependencies]
+Sphinx = "^3.5.3"
+sphinx-autodoc-typehints = "^1.11.1"
+
+[tool.poetry.group.format.dependencies]
+black = "^24.4.2"
+
+[tool.poetry.group.test.dependencies]
+codecov = "^2.1.11"
 coverage = {extras = ["toml"], version = "^5.5"}
+pytest = "^6.2.2"
 pytest-cov = "^2.11.1"
 pytest-mock = "^3.5.1"
+safety = "^1.10.3"
+xdoctest = "^0.15.4"
+
+[tool.poetry.group.lint.dependencies]
+darglint = "^1.7.0"
 flake8 = "^3.9.0"
-black = "^20.8b1"
+flake8-annotations = "^2.6.1"
 flake8-black = "^0.2.1"
 flake8-bandit = "^2.1.2"
 flake8-bugbear = "^21.3.2"
-flake8-import-order = "^0.18.1"
-safety = "^1.10.3"
-mypy = "^0.812"
-flake8-annotations = "^2.6.1"
 flake8-docstrings = "^1.6.0"
-darglint = "^1.7.0"
-xdoctest = "^0.15.4"
-Sphinx = "^3.5.3"
-sphinx-autodoc-typehints = "^1.11.1"
-codecov = "^2.1.11"
+flake8-import-order = "^0.18.1"
+mypy = "^1.11.1"
+types-requests = "^2.32.0.20240712"
+
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
