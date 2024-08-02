@@ -19,20 +19,20 @@ marshmallow = "^3.10.0"
 [tool.poetry.group.dev.dependencies]
 
 [tool.poetry.group.docs.dependencies]
-Sphinx = "^3.5.3"
-sphinx-autodoc-typehints = "^1.11.1"
+Sphinx = "^8.0.2"
+sphinx-autodoc-typehints = "^2.2.3"
 
 [tool.poetry.group.format.dependencies]
 black = "^24.4.2"
 
 [tool.poetry.group.test.dependencies]
-codecov = "^2.1.11"
-coverage = {extras = ["toml"], version = "^5.5"}
+codecov = "^2.1.13"
+coverage = {extras = ["toml"], version = "^7.6.0"}
 pytest = "^8.3.2"
-pytest-cov = "^2.11.1"
-pytest-mock = "^3.5.1"
-safety = "^1.10.3"
-xdoctest = "^0.15.4"
+pytest-cov = "^5.0.0"
+pytest-mock = "^3.14.0"
+safety = "^3.2.4"
+xdoctest = "^1.1.6"
 
 [tool.poetry.group.lint.dependencies]
 darglint = "^1.7.0"
