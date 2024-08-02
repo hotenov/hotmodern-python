@@ -13,11 +13,10 @@ documentation = "https://hotmodern-python.readthedocs.io"
 python = "^3.11"
 click = "^8.1.7"
 requests = "^2.32.3"
-desert = "^2020.11.18"
+desert = "^2022.9.22"
 marshmallow = "^3.10.0"
 
 [tool.poetry.group.dev.dependencies]
-
 
 [tool.poetry.group.docs.dependencies]
 Sphinx = "^3.5.3"
@@ -29,7 +28,7 @@ black = "^24.4.2"
 [tool.poetry.group.test.dependencies]
 codecov = "^2.1.11"
 coverage = {extras = ["toml"], version = "^5.5"}
-pytest = "^6.2.2"
+pytest = "^8.3.2"
 pytest-cov = "^2.11.1"
 pytest-mock = "^3.5.1"
 safety = "^1.10.3"
@@ -45,7 +44,6 @@ flake8-bugbear = "^21.3.2"
 flake8-docstrings = "^1.6.0"
 flake8-import-order = "^0.18.1"
 mypy = "^1.11.1"
-types-requests = "^2.32.0.20240712"
 
 
 [build-system]
