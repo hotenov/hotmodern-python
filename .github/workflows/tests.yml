@@ -6,7 +6,7 @@ jobs:
     strategy:
       matrix:
         python-version: ['3.11', '3.12']
-    name: Python ${{ matrix.python-version }}
+    name: All Nox sessions on Python ${{ matrix.python-version }}
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
@@ -15,4 +15,4 @@ jobs:
         architecture: x64
     - run: pip install nox==2024.4.15
     - run: pip install poetry==1.8.3
-    - run: nox
+    - run: nox --python ${{ matrix.python-version }}

@@ -4,7 +4,8 @@ on:
     branches:
       - main
 jobs:
-  test_pypi:
+  publish_test_pypi:
+    name: Publish package to TestPyPI
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -18,8 +19,8 @@ jobs:
         version=$(poetry version | awk '{print $2}') &&
         poetry version $version.dev.$(date +%s)
     - run: poetry build
-    - uses: pypa/gh-action-pypi-publish@v1.0.0a0
+    - uses: pypa/gh-action-pypi-publish@release/v1
       with:
         user: __token__
-        password: ${{ secrets.TEST_PYPI_TOKEN }}
-        repository_url: https://test.pypi.org/legacy/
+        password: ${{ secrets.TEST_PYPI_API_TOKEN }}
+        repository-url: https://test.pypi.org/legacy/

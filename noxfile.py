@@ -32,7 +32,7 @@ def install_with_constraints(session: Session, *args: str, **kwargs: Any) -> Non
 def tests(session: Session) -> None:
     """Run the test suite."""
     args = session.posargs or ["--cov", "-m", "not e2e"]
-    session.run("poetry", "install", "--only", "main,test", external=True)
+    session.run("poetry", "install", "--only", "main", external=True)
     install_with_constraints(
         session,
         "coverage[toml]",
