@@ -1,4 +1,5 @@
 """Client for the Wikipedia REST API, version 1."""
+
 from dataclasses import dataclass
 
 import click
@@ -51,10 +52,10 @@ def random_page(language: str = "en") -> Page:
     url = API_URL.format(language=language)
 
     try:
-        with requests.get(url) as response:
+        with requests.get(url, timeout=30) as response:
             response.raise_for_status()
             data = response.json()
             return schema.load(data)
     except (requests.RequestException, marshmallow.ValidationError) as error:
         message = str(error)
-        raise click.ClickException(message)
+        raise click.ClickException(message) from error

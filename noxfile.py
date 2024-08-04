@@ -1,4 +1,5 @@
 """Nox sessions."""
+
 import pathlib
 import tempfile
 from typing import Any
@@ -12,7 +13,9 @@ nox.options.sessions = "lint", "mypy", "safety", "tests"
 locations = "src", "tests", "noxfile.py", "docs/conf.py"
 
 
-def install_with_constraints(session: Session, *args: str, **kwargs: Any) -> None:
+def install_with_constraints(
+    session: Session, *args: str, **kwargs: Any  # type: ignore # noqa: ANN401
+) -> None:
     """Install packages constrained by Poetry's lock file."""
     with tempfile.NamedTemporaryFile(delete=False) as requirements:
         session.run(
@@ -23,8 +26,7 @@ def install_with_constraints(session: Session, *args: str, **kwargs: Any) -> Non
             f"--output={requirements.name}",
             external=True,
         )
-        # session.install(f"--constraint={requirements.name}", *args, **kwargs)
-        session.install("-r", f"{requirements.name}", *args, **kwargs)  # with new poetry v1.8.3
+        session.install("-r", f"{requirements.name}", *args, **kwargs)
     pathlib.Path(requirements.name).unlink()
 
 
