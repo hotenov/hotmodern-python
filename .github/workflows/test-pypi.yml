@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: 'Test PyPI'
-      url: https://pypi.org/p/hotmodern-python
+      url: https://test.pypi.org/p/hotmodern-python/
     permissions:
       id-token: write
     steps:
