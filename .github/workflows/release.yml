@@ -19,7 +19,7 @@ jobs:
         architecture: x64
     - run: pip install nox==2024.4.15
     - run: pip install poetry==1.8.3
-    - run: nox
+    - run: nox --python 3.12
     - run: poetry build
     - name: Publish package to PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
