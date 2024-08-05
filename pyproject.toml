@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hotmodern-python"
-version = "0.1.1"
+version = "0.1.2"
 description = "Python learning project by blog posts series 'Hypermodern Python' (by Claudio Jolowicz)"
 authors = ["Artem Hotenov <artem@hotenov.com>"]
 readme = "README.md"
